@@ -1,0 +1,14 @@
+#comm {
+    width: 600px;
+    height: 150px;
+}
+.labels {
+    font-size: 25px;
+}
+.pole {
+    width: 600px;
+    height: 20px;
+}
+.errormessages {
+    color: red;
+}
