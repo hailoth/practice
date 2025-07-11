@@ -1,20 +1,29 @@
-function get_width() {
-    return document.getElementById('num1').value;
-}
-function get_height() {
-    return document.getElementById('num2').value;
-}
-function random_color() {
-    let colorsymb = '0123456789ABCDEF'
-    let colorcode ='#';
+function randomColor() {
+    let colorSymbols = '0123456789ABCDEF'
+    let colorCode ='#';
     for (let i = 0; i < 6; i++) {
-        colorcode+=colorsymb[Math.round(Math.random()*16)];
+        colorCode+=colorSymbols[Math.round(Math.random()*16)];
     }
-    return colorcode;
+    return colorCode;
 }
-function generate_table() {
-    let poleid = document.getElementById('pole');
-    poleid.style.width=get_width()+'px';
-    poleid.style.height=get_height()+'px';
-    poleid.style.backgroundColor = random_color();
+function generateTable() {
+    if (!checkDomElements()) {
+        return false;
+    }
+
+    let table = document.getElementById('table');
+
+    table.style.width=document.getElementById('num1').value+'px';
+    table.style.height=document.getElementById('num2').value+'px';
+    table.style.backgroundColor = randomColor();
+}
+
+function checkDomElements() {
+    if (document.getElementById('num1')
+        && document.getElementById('num2')
+        && document.getElementById('table')) {
+        return true;
+    }
+    else
+        return false;
 }
