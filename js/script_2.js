@@ -1,49 +1,56 @@
-function isitnumber() {
-    if (!document.getElementById('phonenumber').value) {
+function isDigit() {
+    if (!document.getElementById('phoneNumber').value) {
         return false;
     }
-    return /^\d+$/.test(document.getElementById('phonenumber').value.trim());
+    return /^\d+$/.test(document.getElementById('phoneNumber').value.trim());
 }
-function check_values() {
-    let flag = 1;
-    let usernameid = document.getElementById('username');
-    let phonenumberid = document.getElementById('phonenumber');
-    let emailid = document.getElementById('email');
-    let errorfioid = document.getElementById('errorfio');
-    let errorphoneid = document.getElementById('errorphone');
-    let erroremailid = document.getElementById('erroremail');
-    let errorinfoid = document.getElementById('errorinfo');
-    errorfioid.textContent = errorphoneid.textContent = erroremailid.textContent = errorinfoid.textContent = "";
-    if (usernameid.value.trim() === '') {
-        flag = 0;
-        errorfioid.textContent = "Пожалуйста, введите ФИО";
+function checkValues() {
+    if (!checkDomElements()) {
+        return false;
     }
-    if (!emailid.value.trim().includes("@") && emailid.value.trim() !== '') {
-        flag = 0;
-        erroremailid.textContent = "Введите корректный e-mail (он должен содержать @)";
+
+    let flag = true;
+
+    let userName = document.getElementById('userName');
+    let phoneNumber = document.getElementById('phoneNumber');
+    let email = document.getElementById('email');
+    let errorUserName = document.getElementById('errorUserName');
+    let errorPhoneNumber = document.getElementById('errorPhoneNumber');
+    let errorEmail = document.getElementById('errorEmail');
+    let errorResult = document.getElementById('errorResult');
+
+    const reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+    clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult);
+
+    if (userName.value.trim() === '') {
+        flag = false;
+        errorUserName.textContent = "Пожалуйста, введите ФИО";
     }
-    if (!isitnumber()) {
-        flag = 0;
-        errorphoneid.textContent = "Номер телефона не может быть пустым или содержать нечисловые значения";
+    if (email.value!=='' && !reg.test(email.value)) {
+        flag = false;
+        errorEmail.textContent = "Введите корректный e-mail";
     }
-    if (flag===1) {
-        errorinfoid.textContent = "Заказ оформлен";
+    if (!isDigit()) {
+        flag = false;
+        errorPhoneNumber.textContent = "Номер телефона не может быть пустым или содержать нечисловые значения";
+    }
+    if (flag===true) {
+        errorResult.textContent = "Заказ оформлен";
     }
 }
+
 ymaps.ready(init);
 let myMap;
+
 function init () {
     myMap = new ymaps.Map("map", {
-        center: [54.193122, 37.617348], // Углич
+        center: [54.193122, 37.617348],
         zoom: 11
     }, {
         balloonMaxWidth: 200,
         searchControlProvider: 'yandex#search'
     });
-
-    // Обработка события, возникающего при щелчке
-    // левой кнопкой мыши в любой точке карты.
-    // При возникновении такого события откроем балун.
     myMap.events.add('click', function (e) {
         if (!myMap.balloon.isOpen()) {
             var coords = e.get('coords');
@@ -63,4 +70,21 @@ function init () {
     myMap.events.add('balloonopen', function (e) {
         myMap.hint.close();
     });
+}
+
+function checkDomElements() {
+    if (document.getElementById('userName')
+        && document.getElementById('phoneNumber')
+        && document.getElementById('email')
+        && document.getElementById('errorUserName')
+        && document.getElementById('errorPhoneNumber')
+        && document.getElementById('errorEmail')
+        && document.getElementById('errorResult')) {
+        return true;
+    }
+    else
+        return false;
+}
+function clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult) {
+    errorUserName.textContent = errorPhoneNumber.textContent = errorEmail.textContent = errorResult.textContent = "";
 }

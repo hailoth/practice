@@ -1,14 +1,14 @@
-#comm {
+#comment {
     width: 600px;
     height: 150px;
 }
-.labels {
+.label {
     font-size: 25px;
 }
-.pole {
+.input {
     width: 600px;
     height: 20px;
 }
-.errormessages {
+.errorMessage {
     color: red;
 }
