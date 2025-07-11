@@ -1,9 +1,10 @@
-function isDigit() {
+function isNumber() {
     if (!document.getElementById('phoneNumber').value) {
         return false;
     }
     return /^\d+$/.test(document.getElementById('phoneNumber').value.trim());
 }
+
 function checkValues() {
     if (!checkDomElements()) {
         return false;
@@ -31,7 +32,7 @@ function checkValues() {
         flag = false;
         errorEmail.textContent = "Введите корректный e-mail";
     }
-    if (!isDigit()) {
+    if (!isNumber()) {
         flag = false;
         errorPhoneNumber.textContent = "Номер телефона не может быть пустым или содержать нечисловые значения";
     }
@@ -85,6 +86,7 @@ function checkDomElements() {
     else
         return false;
 }
+
 function clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult) {
     errorUserName.textContent = errorPhoneNumber.textContent = errorEmail.textContent = errorResult.textContent = "";
 }
