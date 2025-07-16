@@ -7,9 +7,9 @@
     <script src="./js/script.js"></script>
 </head>
 <body>
-    <p>Ширина: <input type="text" id="num1" size="10" maxlength="3"/></p>
-    <p>Высота: <input type="text" id="num2" size="10" maxlength="3"/></p>
-    <input type="button" value="Сгенерировать случайный цвет" onclick="generate_table()">
-    <h1 id="pole"></h1>
+    <p>Ширина: <input type="number" id="num1" size="10" min="1" max="1000" step="1"/></p>
+    <p>Высота: <input type="number" id="num2" size="10" min="1" max="1000" step="1"/></p>
+    <input type="button" value="Сгенерировать случайный цвет" onclick="generateTable()">
+    <div id="table"></div>
 </body>
 </html>
