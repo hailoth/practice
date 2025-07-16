@@ -31,6 +31,7 @@ function isDigit() {
     if ((/^\d+$/.test(num1) && /^\d+$/.test(num2)) || (num1 === '' || num2 === '')) {
         return true;
     }
+
     console.error(`ошибка: некорректное значение input`);
     return false;
 }
