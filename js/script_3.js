@@ -7,33 +7,55 @@ async function generateTable() {
     clearTable();
 
     let response = await fetch("https://exercise.develop.maximaster.ru/service/products/");
-    let result = (await response.json());
 
     if (!(response.ok)) {
         alert("Ошибка HTTP: " + response.status);
         return false;
     }
 
-    for (let i=1;i<result.length+1;i++) {
-        result[i-1].id=i;
-        result[i-1].sum=Number(result[i-1].price)*Number(result[i-1].quantity);
+    let result = (await response.json());
+
+    for (let i = 1; i < result.length + 1; i++) {
+        result[i - 1].id = i;
+        result[i - 1].sum = Number(result[i - 1].price) * Number(result[i - 1].quantity);
     }
+
+    const processedData = result.map((item, index) => ({
+        ...item,
+        id: index + 1,
+        sum: Number(item.price) * Number(item.quantity)
+    }));
 
     const table = document.getElementById('table');
     const minPrice = document.getElementById('minPrice');
     const maxPrice = document.getElementById('maxPrice');
 
-    for (let i=0;i<result.length;i++) {
-        if ((result[i].price>=setMinValue(minPrice)) && (result[i].price<=setMaxValue(maxPrice))) {
-            let row = table.insertRow();
-            row.insertCell().textContent = result[i].id;
-            row.insertCell().textContent = result[i].name;
-            row.insertCell().textContent = result[i].quantity;
-            row.insertCell().textContent = result[i].price;
-            row.insertCell().textContent = result[i].sum;
-        }
+    const minPriceValue = setMinValue(minPrice);
+    const maxPriceValue = setMaxValue(maxPrice);
+
+    const filteredData = processedData.filter(item =>
+        item.price >= minPriceValue && item.price <= maxPriceValue
+    );
+
+    if (filteredData.length === 0) {
+        alert('Нет данных, соответствующих фильтру');
+        return;
     }
-    document.body.appendChild(table);
+
+    filteredData.forEach(item => {
+        const row = table.insertRow();
+        const cells = [
+            item.id,
+            item.name,
+            item.quantity,
+            item.price.toFixed(2),
+            item.sum.toFixed(2)
+        ];
+
+        cells.forEach(cellValue => {
+            row.insertCell().textContent = cellValue;
+        });
+    });
 }
 
 function clearTable() {
@@ -47,10 +69,9 @@ function clearTable() {
 function setMinValue(min) {
     let minValue;
 
-    if (min.value=="" || min.value==0) {
+    if (min.value == "" || min.value == 0) {
         minValue = -1;
-    }
-    else {
+    } else {
         minValue = min.value;
     }
 
@@ -60,10 +81,9 @@ function setMinValue(min) {
 function setMaxValue(max) {
     let maxValue;
 
-    if (max.value=="" || max.value==0) {
+    if (max.value == "" || max.value == 0) {
         maxValue = Number.POSITIVE_INFINITY;
-    }
-    else {
+    } else {
         maxValue = max.value;
     }
 
@@ -71,11 +91,13 @@ function setMaxValue(max) {
 }
 
 function checkDomElements() {
-    if (document.getElementById('minPrice')
-        && document.getElementById('maxPrice')
-        && document.getElementById('table')) {
-        return true;
-    }
-    else
+
+    const requiredElements = ['minPrice', 'maxPrice', 'table'];
+    const missingElements = requiredElements.filter(id => !document.getElementById(id));
+    if (missingElements.length > 0) {
+        console.error(`ошибка: ${missingElements.join(', ')}`);
         return false;
+    }
+
+    return true;
 }

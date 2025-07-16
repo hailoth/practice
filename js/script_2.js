@@ -1,49 +1,66 @@
-function isDigit() {
-    if (!document.getElementById('phoneNumber').value) {
-        return false;
+function validateValues({ userName, phoneNumber, email }) {
+    const errors = {};
+    const emailTestError = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$/;
+    const phoneNumberTestError = /^\d+$/;
+
+    if (!userName.trim()) {
+        errors.userName = "Пожалуйста, введите ФИО";
     }
-    return /^\d+$/.test(document.getElementById('phoneNumber').value.trim());
+    if (email && !emailTestError.test(email)) {
+        errors.email = "Введите корректный e-mail";
+    }
+    if (!phoneNumberTestError.test(phoneNumber)) {
+        errors.phoneNumber = "Номер телефона не может быть пустым или содержать нечисловые значения";
+    }
+
+    return errors;
 }
+
+function showErrors(errors, elements) {
+    Object.keys(elements).forEach(key => {
+        if (key !== 'result') {
+            elements[key].textContent = '';
+        }
+    });
+
+    Object.entries(errors).forEach(([key, msg]) => {
+        if (elements[key]) {
+            elements[key].textContent = msg;
+        }
+    });
+
+    elements.result.textContent = '';
+    if (Object.keys(errors).length === 0) {
+        elements.result.textContent = "Заказ оформлен";
+    }
+}
+
 function checkValues() {
-    if (!checkDomElements()) {
-        return false;
-    }
+    if (!checkDomElements()) return false;
 
-    let flag = true;
+    const elements = {
+        userName: document.getElementById('errorUserName'),
+        phoneNumber: document.getElementById('errorPhoneNumber'),
+        email: document.getElementById('errorEmail'),
+        result: document.getElementById('errorResult')
+    };
 
-    let userName = document.getElementById('userName');
-    let phoneNumber = document.getElementById('phoneNumber');
-    let email = document.getElementById('email');
-    let errorUserName = document.getElementById('errorUserName');
-    let errorPhoneNumber = document.getElementById('errorPhoneNumber');
-    let errorEmail = document.getElementById('errorEmail');
-    let errorResult = document.getElementById('errorResult');
+    const values = {
+        userName: document.getElementById('userName').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
+        email: document.getElementById('email').value
+    };
 
-    const reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    const errors = validateValues(values);
+    showErrors(errors, elements);
 
-    clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult);
-
-    if (userName.value.trim() === '') {
-        flag = false;
-        errorUserName.textContent = "Пожалуйста, введите ФИО";
-    }
-    if (email.value!=='' && !reg.test(email.value)) {
-        flag = false;
-        errorEmail.textContent = "Введите корректный e-mail";
-    }
-    if (!isDigit()) {
-        flag = false;
-        errorPhoneNumber.textContent = "Номер телефона не может быть пустым или содержать нечисловые значения";
-    }
-    if (flag===true) {
-        errorResult.textContent = "Заказ оформлен";
-    }
+    return Object.keys(errors).length === 0;
 }
 
 ymaps.ready(init);
 let myMap;
 
-function init () {
+function init() {
     myMap = new ymaps.Map("map", {
         center: [54.193122, 37.617348],
         zoom: 11
@@ -55,15 +72,14 @@ function init () {
         if (!myMap.balloon.isOpen()) {
             var coords = e.get('coords');
             myMap.balloon.open(coords, {
-                contentHeader:'Место выбрано',
+                contentHeader: 'Место выбрано',
                 contentBody:
                     '<p>Координаты: ' + [
                         coords[0].toPrecision(6),
                         coords[1].toPrecision(6)
                     ].join(', ') + '</p>',
             });
-        }
-        else {
+        } else {
             myMap.balloon.close();
         }
     });
@@ -73,18 +89,13 @@ function init () {
 }
 
 function checkDomElements() {
-    if (document.getElementById('userName')
-        && document.getElementById('phoneNumber')
-        && document.getElementById('email')
-        && document.getElementById('errorUserName')
-        && document.getElementById('errorPhoneNumber')
-        && document.getElementById('errorEmail')
-        && document.getElementById('errorResult')) {
-        return true;
-    }
-    else
+
+    const requiredElements = ['userName', 'phoneNumber', 'email', 'errorUserName', 'errorPhoneNumber', 'errorEmail', 'errorResult'];
+    const missingElements = requiredElements.filter(id => !document.getElementById(id));
+    if (missingElements.length > 0) {
+        console.error(`ошибка: ${missingElements.join(', ')}`);
         return false;
-}
-function clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult) {
-    errorUserName.textContent = errorPhoneNumber.textContent = errorEmail.textContent = errorResult.textContent = "";
+    }
+
+    return true;
 }
