@@ -1,29 +1,36 @@
 function randomColor() {
-    let colorSymbols = '0123456789ABCDEF'
-    let colorCode ='#';
-    for (let i = 0; i < 6; i++) {
-        colorCode+=colorSymbols[Math.round(Math.random()*16)];
-    }
-    return colorCode;
+    return '#' + Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, '0');
 }
 function generateTable() {
-    if (!checkDomElements()) {
+    if (!checkDomElements() || !isDigit()) {
         return false;
     }
 
-    let table = document.getElementById('table');
+    const table = document.getElementById('table');
 
-    table.style.width=document.getElementById('num1').value+'px';
-    table.style.height=document.getElementById('num2').value+'px';
+    table.style.width = document.getElementById('num1').value + 'px';
+    table.style.height = document.getElementById('num2').value + 'px';
     table.style.backgroundColor = randomColor();
 }
 
 function checkDomElements() {
-    if (document.getElementById('num1')
-        && document.getElementById('num2')
-        && document.getElementById('table')) {
+    const requiredElements = ['num1', 'num2', 'table'];
+    const missingElements = requiredElements.filter(id => !document.getElementById(id));
+    if (missingElements.length > 0) {
+        console.error(`ошибка: ${missingElements.join(', ')}`);
+        return false;
+    }
+
+    return true;
+}
+
+function isDigit() {
+    const num1 = document.getElementById('num1').value;
+    const num2 = document.getElementById('num2').value;
+
+    if ((/^\d+$/.test(num1) && /^\d+$/.test(num2)) || (num1 === '' || num2 === '')) {
         return true;
     }
-    else
-        return false;
+    console.error(`ошибка: некорректное значение input`);
+    return false;
 }
