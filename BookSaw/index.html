@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>BookSaw - Книжный магазин</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="stylestyle.css">
+</head>
+
+<body>
+<div id="header-wrap">
+    <header id="header">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-6">
+                    <div class="main-logo">
+                        <a href="index.html"><img src="imagesain-logo.png" alt="logo" style="max-height: 60px;"></a>
+                    </div>
+                </div>
+                <div class="col-md-10 d-none d-md-block">
+                    <nav>
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item"><a class="nav-link active" href="#home">Главная</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#featured-books">Рекомендуемые</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#popular-books">Популярные</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#special-offer">Акции</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#latest-blog">Статьи</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 d-md-none text-end">
+                    <button class="btn btn-outline-dark rounded-pill" id="mobile-menu-btn">≡</button>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<section id="billboard">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-2 order-md-1">
+                <div class="banner-content">
+                    <h2 class="banner-title">Life of the Wild</h2>
+                    <p>Книги открывают новые миры и вдохновляют на путешествия. Погрузитесь в увлекательные истории и расширьте свой кругозор.</p>
+                    <a href="#" class="btn btn-outline-accent">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-6 order-1 order-md-2">
+                <img src="images/main-banner1.jpg" alt="banner" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="client-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="d-flex justify-content-around flex-wrap">
+                    <img src="images/client-image1.png" alt="client" style="max-height: 40px; margin: 15px;">
+                    <img src="images/client-image2.png" alt="client" style="max-height: 40px; margin: 15px;">
+                    <img src="images/client-image3.png" alt="client" style="max-height: 40px; margin: 15px;">
+                    <img src="images/client-image4.png" alt="client" style="max-height: 40px; margin: 15px;">
+                    <img src="images/client-image5.png" alt="client" style="max-height: 40px; margin: 15px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="featured-books" class="py-5 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-title divider">Рекомендуемые книги</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="product-item">
+                    <img src="images/product-item1.jpg" alt="Books" class="img-fluid">
+                    <h3>Simple way of piece life</h3>
+                    <span>Armor Ramsey</span>
+                    <div class="item-price">$ 40.00</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="product-item">
+                    <img src="images/product-item2.jpg" alt="Books" class="img-fluid">
+                    <h3>Great travel at desert</h3>
+                    <span>Sanchit Howdy</span>
+                    <div class="item-price">$ 38.00</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="product-item">
+                    <img src="images/product-item3.jpg" alt="Books" class="img-fluid">
+                    <h3>The lady beauty Scarlett</h3>
+                    <span>Arthur Doyle</span>
+                    <div class="item-price">$ 45.00</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="product-item">
+                    <img src="images/product-item4.jpg" alt="Books" class="img-fluid">
+                    <h3>Once upon a time</h3>
+                    <span>Klien Marry</span>
+                    <div class="item-price">$ 35.00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center mt-4">
+                <a href="#" class="btn btn-outline-accent">Все товары</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="best-selling">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-2 order-md-1">
+                <h2 class="section-title divider">Бестселлер</h2>
+                <div class="author-name">By Timbur Hood</div>
+                <h3>Birds gonna be happy</h3>
+                <p>Эта книга изменит ваше представление о мире. Увлекательный сюжет и глубокие мысли не оставят вас равнодушными.</p>
+                <div class="item-price">$ 45.00</div>
+                <a href="#" class="btn btn-outline-accent">Купить сейчас</a>
+            </div>
+            <div class="col-md-6 order-1 order-md-2">
+                <img src="images/single-image.jpg" alt="book" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="popular-books" class="py-5 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-title divider">Популярные книги</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs justify-content-center mb-4" id="myTab">
+                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#all-genre">Все жанры</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#business">Бизнес</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#technology">Технологии</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="all-genre">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-item">
+                                    <img src="images/tab-item1.jpg" alt="Books" class="img-fluid">
+                                    <h3>Portrait photography</h3>
+                                    <span>Adam Silber</span>
+                                    <div class="item-price">$ 40.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-item">
+                                    <img src="images/tab-item2.jpg" alt="Books" class="img-fluid">
+                                    <h3>Once upon a time</h3>
+                                    <span>Klien Marry</span>
+                                    <div class="item-price">$ 35.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-item">
+                                    <img src="images/tab-item3.jpg" alt="Books" class="img-fluid">
+                                    <h3>Tips of simple lifestyle</h3>
+                                    <span>Bratt Smith</span>
+                                    <div class="item-price">$ 40.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-item">
+                                    <img src="images/tab-item4.jpg" alt="Books" class="img-fluid">
+                                    <h3>Just felt from outside</h3>
+                                    <span>Nicole Wilson</span>
+                                    <div class="item-price">$ 40.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="business">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-item">
+                                    <img src="images/tab-item2.jpg" alt="Books" class="img-fluid">
+                                    <h3>Peaceful Enlightment</h3>
+                                    <span>Marmik Lama</span>
+                                    <div class="item-price">$ 40.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-item">
+                                    <img src="images/tab-item4.jpg" alt="Books" class="img-fluid">
+                                    <h3>Great travel at desert</h3>
+                                    <span>Sanchit Howdy</span>
+                                    <div class="item-price">$ 40.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="technology">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-item">
+                                    <img src="images/tab-item1.jpg" alt="Books" class="img-fluid">
+                                    <h3>Peaceful Enlightment</h3>
+                                    <span>Marmik Lama</span>
+                                    <div class="item-price">$ 40.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-item">
+                                    <img src="images/tab-item3.jpg" alt="Books" class="img-fluid">
+                                    <h3>Great travel at desert</h3>
+                                    <span>Sanchit Howdy</span>
+                                    <div class="item-price">$ 40.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="quotation" class="py-5 my-5 text-center">
+    <div class="container">
+        <h2 class="section-title divider">Цитата дня</h2>
+        <blockquote class="blockquote">
+            <p class="mb-4">"Чем больше вы читаете, тем больше вещей вы узнаете. Чем больше вы учитесь, тем больше мест вы посетите."</p>
+            <footer class="blockquote-footer">Доктор Сьюз</footer>
+        </blockquote>
+    </div>
+</section>
+
+<section id="special-offer" class="py-5 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-title divider">Книги со скидкой</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="product-item">
+                    <img src="images/product-item5.jpg" alt="Books" class="img-fluid">
+                    <h3>Simple way of piece life</h3>
+                    <span>Armor Ramsey</span>
+                    <div class="item-price"><span class="prev-price">$ 50.00</span>$ 40.00</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="product-item">
+                    <img src="images/product-item6.jpg" alt="Books" class="img-fluid">
+                    <h3>Great travel at desert</h3>
+                    <span>Sanchit Howdy</span>
+                    <div class="item-price"><span class="prev-price">$ 30.00</span>$ 38.00</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="product-item">
+                    <img src="images/product-item7.jpg" alt="Books" class="img-fluid">
+                    <h3>The lady beauty Scarlett</h3>
+                    <span>Arthur Doyle</span>
+                    <div class="item-price"><span class="prev-price">$ 35.00</span>$ 45.00</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="product-item">
+                    <img src="images/product-item8.jpg" alt="Books" class="img-fluid">
+                    <h3>Once upon a time</h3>
+                    <span>Klien Marry</span>
+                    <div class="item-price"><span class="prev-price">$ 25.00</span>$ 35.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="subscribe">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="section-title divider">Подпишитесь на рассылку</h2>
+            </div>
+            <div class="col-md-6">
+                <p>Будьте в курсе новых поступлений и специальных предложений.</p>
+                <form class="d-flex">
+                    <input type="email" class="form-control me-2" placeholder="Введите ваш email">
+                    <button type="submit" class="btn btn-dark">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="latest-blog" class="py-5 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-title divider">Последние статьи</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <article>
+                    <img src="images/post-img1.jpg" alt="post" class="img-fluid mb-3">
+                    <div class="meta-date">30 марта 2021</div>
+                    <h3>Чтение книг делает моменты счастливее</h3>
+                    <div class="categories">вдохновение</div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article>
+                    <img src="images/post-img2.jpg" alt="post" class="img-fluid mb-3">
+                    <div class="meta-date">29 марта 2021</div>
+                    <h3>Как книги меняют наше мышление</h3>
+                    <div class="categories">вдохновение</div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article>
+                    <img src="images/post-img3.jpg" alt="post" class="img-fluid mb-3">
+                    <div class="meta-date">27 февраля 2021</div>
+                    <h3>Лучшие книги этого года</h3>
+                    <div class="categories">вдохновение</div>
+                </article>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center mt-4">
+                <a href="#" class="btn btn-outline-accent">Все статьи</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="download-app">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-5 order-2 order-md-1">
+                <h2 class="section-title divider">Скачайте наше приложение!</h2>
+                <p>Читайте любимые книги в любое время и в любом месте с нашим удобным приложением.</p>
+                <div class="mt-4">
+                    <img src="images/google-play.jpg" alt="google play" class="me-2" style="max-height: 40px;">
+                    <img src="images/app-store.jpg" alt="app store" style="max-height: 40px;">
+                </div>
+            </div>
+            <div class="col-md-7 order-1 order-md-2">
+                <img src="images/device.png" alt="phone" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/main-logo.png" alt="logo" style="max-height: 60px;" class="mb-3">
+                <p>Книжный магазин с лучшей коллекцией литературы для всех возрастов и интересов.</p>
+            </div>
+
+            <div class="col-md-2">
+                <h5>О нас</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Донат</a></li>
+                    <li><a href="#">Статьи</a></li>
+                    <li><a href="#">Карьера</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+                <h5>Открытия</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Книги</a></li>
+                    <li><a href="#">Авторы</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+                <h5>Мой аккаунт</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Вход</a></li>
+                    <li><a href="#">Корзина</a></li>
+                    <li><a href="#">Список желаемого</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+                <h5>Помощь</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Центр поддержки</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="footer-bottom" class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0">© 2025 BookSaw. Все права защищены.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mobile-menu" class="d-none">
+    <div class="mobile-menu-content">
+        <button id="close-menu" class="btn btn-close"></button>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link active" href="#home">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="#featured-books">Рекомендуемые</a></li>
+            <li class="nav-item"><a class="nav-link" href="#popular-books">Популярные</a></li>
+            <li class="nav-item"><a class="nav-link" href="#special-offer">Акции</a></li>
+            <li class="nav-item"><a class="nav-link" href="#latest-blog">Статьи</a></li>
+        </ul>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.remove('d-none');
+        document.body.style.overflow = 'hidden';
+    });
+
+    document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('d-none');
+        document.body.style.overflow = 'auto';
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            document.getElementById('mobile-menu').classList.add('d-none');
+            document.body.style.overflow = 'auto';
+        });
+    });
+</script>
+</body>
+
+</html>
