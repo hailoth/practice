@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./styles/style_2.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=93ab19e2-df6d-4e3e-813f-3cf9afa36b92&lang=ru_RU" type="text/javascript"></script>
+    <script src="./js/script_2.js"></script>
+</head>
+<body>
+    <form><label for="userName" class="label">ФИО</label><br>
+        <input type='text' id='userName' placeholder="Обязательное поле" class="input"><br>
+        <label for="phoneNumber" class="label">Телефон</label><br>
+        <input id='phoneNumber' placeholder="Обязательное поле" class="input"><br>
+        <label for="email" class="label">E-mail</label><br>
+        <input id='email' class="input"><br>
+        <label class="label">Адрес доставки</label><br>
+        <div id="map" style="width: 600px; height: 400px"></div><br>
+        <label for="comment" class="label">Комментарий к заказу</label><br>
+        <textarea id='comment' class="comment" placeholder="Введите сообщение (до 500 символов)" maxlength="500"></textarea><br></form>
+    <br><input type="button" value="Отправить" onclick="checkValues()">
+    <p id="errorUserName" class="errorMessage"></p>
+    <p id="errorPhoneNumber" class="errorMessage"></p>
+    <p id="errorEmail" class="errorMessage"></p>
+    <p id="errorResult"></p>
+</body>
+</html>

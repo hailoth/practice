@@ -1,0 +1,14 @@
+#comment {
+    width: 600px;
+    height: 150px;
+}
+.label {
+    font-size: 25px;
+}
+.input {
+    width: 600px;
+    height: 20px;
+}
+.errorMessage {
+    color: red;
+}
