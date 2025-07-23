@@ -1,0 +1,239 @@
+Index: js/script_2.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>function isDigit() {\n    if (!document.getElementById('phoneNumber').value) {\n        return false;\n    }\n    return /^\\d+$/.test(document.getElementById('phoneNumber').value.trim());\n}\nfunction checkValues() {\n    if (!checkDomElements()) {\n        return false;\n    }\n\n    let flag = true;\n\n    let userName = document.getElementById('userName');\n    let phoneNumber = document.getElementById('phoneNumber');\n    let email = document.getElementById('email');\n    let errorUserName = document.getElementById('errorUserName');\n    let errorPhoneNumber = document.getElementById('errorPhoneNumber');\n    let errorEmail = document.getElementById('errorEmail');\n    let errorResult = document.getElementById('errorResult');\n\n    const reg=/^([A-Za-z0-9_\\-\\.])+\\@([A-Za-z0-9_\\-\\.])+\\.([A-Za-z]{2,4})$/;\n\n    clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult);\n\n    if (userName.value.trim() === '') {\n        flag = false;\n        errorUserName.textContent = \"Пожалуйста, введите ФИО\";\n    }\n    if (email.value!=='' && !reg.test(email.value)) {\n        flag = false;\n        errorEmail.textContent = \"Введите корректный e-mail\";\n    }\n    if (!isDigit()) {\n        flag = false;\n        errorPhoneNumber.textContent = \"Номер телефона не может быть пустым или содержать нечисловые значения\";\n    }\n    if (flag===true) {\n        errorResult.textContent = \"Заказ оформлен\";\n    }\n}\n\nymaps.ready(init);\nlet myMap;\n\nfunction init () {\n    myMap = new ymaps.Map(\"map\", {\n        center: [54.193122, 37.617348],\n        zoom: 11\n    }, {\n        balloonMaxWidth: 200,\n        searchControlProvider: 'yandex#search'\n    });\n    myMap.events.add('click', function (e) {\n        if (!myMap.balloon.isOpen()) {\n            var coords = e.get('coords');\n            myMap.balloon.open(coords, {\n                contentHeader:'Место выбрано',\n                contentBody:\n                    '<p>Координаты: ' + [\n                        coords[0].toPrecision(6),\n                        coords[1].toPrecision(6)\n                    ].join(', ') + '</p>',\n            });\n        }\n        else {\n            myMap.balloon.close();\n        }\n    });\n    myMap.events.add('balloonopen', function (e) {\n        myMap.hint.close();\n    });\n}\n\nfunction checkDomElements() {\n    if (document.getElementById('userName')\n        && document.getElementById('phoneNumber')\n        && document.getElementById('email')\n        && document.getElementById('errorUserName')\n        && document.getElementById('errorPhoneNumber')\n        && document.getElementById('errorEmail')\n        && document.getElementById('errorResult')) {\n        return true;\n    }\n    else\n        return false;\n}\nfunction clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult) {\n    errorUserName.textContent = errorPhoneNumber.textContent = errorEmail.textContent = errorResult.textContent = \"\";\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/script_2.js b/js/script_2.js
+--- a/js/script_2.js	(revision 7fb654a4b32ace55adbf00ac51df80ab056444ca)
++++ b/js/script_2.js	(date 1752663305685)
+@@ -1,9 +1,3 @@
+-function isDigit() {
+-    if (!document.getElementById('phoneNumber').value) {
+-        return false;
+-    }
+-    return /^\d+$/.test(document.getElementById('phoneNumber').value.trim());
+-}
+ function checkValues() {
+     if (!checkDomElements()) {
+         return false;
+@@ -11,31 +5,32 @@
+ 
+     let flag = true;
+ 
+-    let userName = document.getElementById('userName');
+-    let phoneNumber = document.getElementById('phoneNumber');
+-    let email = document.getElementById('email');
+-    let errorUserName = document.getElementById('errorUserName');
+-    let errorPhoneNumber = document.getElementById('errorPhoneNumber');
+-    let errorEmail = document.getElementById('errorEmail');
+-    let errorResult = document.getElementById('errorResult');
++    const userName = document.getElementById('userName');
++    const phoneNumber = document.getElementById('phoneNumber');
++    const email = document.getElementById('email');
++    const errorUserName = document.getElementById('errorUserName');
++    const errorPhoneNumber = document.getElementById('errorPhoneNumber');
++    const errorEmail = document.getElementById('errorEmail');
++    const errorResult = document.getElementById('errorResult');
+ 
+-    const reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
++    const emailCheck = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
++    const phoneNumberCheck = /^\d+$/;
+ 
+     clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult);
+ 
+-    if (userName.value.trim() === '') {
++    if (userName.value === '') {
+         flag = false;
+         errorUserName.textContent = "Пожалуйста, введите ФИО";
+     }
+-    if (email.value!=='' && !reg.test(email.value)) {
++    if (email.value !== '' && !emailCheck.test(email.value)) {
+         flag = false;
+         errorEmail.textContent = "Введите корректный e-mail";
+     }
+-    if (!isDigit()) {
++    if ((phoneNumber.value === '') || !(phoneNumberCheck.test(phoneNumber.value))) {
+         flag = false;
+         errorPhoneNumber.textContent = "Номер телефона не может быть пустым или содержать нечисловые значения";
+     }
+-    if (flag===true) {
++    if (flag === true) {
+         errorResult.textContent = "Заказ оформлен";
+     }
+ }
+@@ -43,7 +38,7 @@
+ ymaps.ready(init);
+ let myMap;
+ 
+-function init () {
++function init() {
+     myMap = new ymaps.Map("map", {
+         center: [54.193122, 37.617348],
+         zoom: 11
+@@ -55,15 +50,14 @@
+         if (!myMap.balloon.isOpen()) {
+             var coords = e.get('coords');
+             myMap.balloon.open(coords, {
+-                contentHeader:'Место выбрано',
++                contentHeader: 'Место выбрано',
+                 contentBody:
+                     '<p>Координаты: ' + [
+                         coords[0].toPrecision(6),
+                         coords[1].toPrecision(6)
+                     ].join(', ') + '</p>',
+             });
+-        }
+-        else {
++        } else {
+             myMap.balloon.close();
+         }
+     });
+@@ -73,18 +67,17 @@
+ }
+ 
+ function checkDomElements() {
+-    if (document.getElementById('userName')
+-        && document.getElementById('phoneNumber')
+-        && document.getElementById('email')
+-        && document.getElementById('errorUserName')
+-        && document.getElementById('errorPhoneNumber')
+-        && document.getElementById('errorEmail')
+-        && document.getElementById('errorResult')) {
+-        return true;
+-    }
+-    else
+-        return false;
++    const requiredElements = ['userName', 'phoneNumber', 'email', 'errorUserName', 'errorPhoneNumber', 'errorEmail', 'errorResult'];
++    const missingElements = requiredElements.filter(id => !document.getElementById(id));
++    if (missingElements.length > 0) {
++        console.error(`ошибка: ${missingElements.join(', ')}`);
++        return false;
++    }
++
++    return true;
+ }
++
+ function clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult) {
+     errorUserName.textContent = errorPhoneNumber.textContent = errorEmail.textContent = errorResult.textContent = "";
+-}
+\ No newline at end of file
++}
++
+Index: styles/style_2.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#comment {\n    width: 600px;\n    height: 150px;\n}\n.label {\n    font-size: 25px;\n}\n.input {\n    width: 600px;\n    height: 20px;\n}\n.errorMessage {\n    color: red;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/styles/style_2.css b/styles/style_2.css
+--- a/styles/style_2.css	(revision 7fb654a4b32ace55adbf00ac51df80ab056444ca)
++++ b/styles/style_2.css	(date 1752662234358)
+@@ -2,13 +2,16 @@
+     width: 600px;
+     height: 150px;
+ }
++
+ .label {
+     font-size: 25px;
+ }
++
+ .input {
+     width: 600px;
+     height: 20px;
+ }
++
+ .errorMessage {
+     color: red;
+ }
+\ No newline at end of file
+Index: index_3.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Title</title>\n    <link rel=\"stylesheet\" href=\"./styles/style_3.css\">\n    <script src=\"./js/script_3.js\"></script>\n</head>\n<body>\n    <p>Цена от: <input type=\"number\" min=\"0\" id=\"minPrice\" class=\"filter\"/> до: <input type=\"number\" min=\"0\" id=\"maxPrice\" class=\"filter\"/></p>\n    <input type=\"button\" value=\"Отфильтровать\" onclick=\"generateTable()\" class=\"button\">\n    <br><br>\n    <form method=\"get\" action=\"\">\n        <table id=\"table\" width=\"650\" border=\"1\" cellspacing=\"0\" cellpadding=\"5\">\n            <tr>\n                <th class=\"mainName\">ID</th>\n                <th class=\"mainName\">Название</th>\n                <th class=\"mainName\">Количество</th>\n                <th class=\"mainName\">Цена за единицу</th>\n                <th class=\"mainName\">Сумма</th>\n            </tr>\n        </table>\n    </form>\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index_3.html b/index_3.html
+--- a/index_3.html	(revision 7fb654a4b32ace55adbf00ac51df80ab056444ca)
++++ b/index_3.html	(date 1752662234381)
+@@ -7,19 +7,20 @@
+     <script src="./js/script_3.js"></script>
+ </head>
+ <body>
+-    <p>Цена от: <input type="number" min="0" id="minPrice" class="filter"/> до: <input type="number" min="0" id="maxPrice" class="filter"/></p>
+-    <input type="button" value="Отфильтровать" onclick="generateTable()" class="button">
+-    <br><br>
+-    <form method="get" action="">
+-        <table id="table" width="650" border="1" cellspacing="0" cellpadding="5">
+-            <tr>
+-                <th class="mainName">ID</th>
+-                <th class="mainName">Название</th>
+-                <th class="mainName">Количество</th>
+-                <th class="mainName">Цена за единицу</th>
+-                <th class="mainName">Сумма</th>
+-            </tr>
+-        </table>
+-    </form>
++<p>Цена от: <input type="number" min="0" id="minPrice" class="filter"/> до: <input type="number" min="0" id="maxPrice"
++                                                                                   class="filter"/></p>
++<input type="button" value="Отфильтровать" onclick="generateTable()" class="button">
++<br><br>
++<form method="get" action="">
++    <table id="table" width="650" border="1" cellspacing="0" cellpadding="5">
++        <tr>
++            <th class="mainName">ID</th>
++            <th class="mainName">Название</th>
++            <th class="mainName">Количество</th>
++            <th class="mainName">Цена за единицу</th>
++            <th class="mainName">Сумма</th>
++        </tr>
++    </table>
++</form>
+ </body>
+ </html>
+\ No newline at end of file
+Index: js/script_3.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>async function generateTable() {\n\n    if (!checkDomElements()) {\n        return false;\n    }\n\n    clearTable();\n\n    let response = await fetch(\"https://exercise.develop.maximaster.ru/service/products/\");\n    let result = (await response.json());\n\n    if (!(response.ok)) {\n        alert(\"Ошибка HTTP: \" + response.status);\n        return false;\n    }\n\n    for (let i=1;i<result.length+1;i++) {\n        result[i-1].id=i;\n        result[i-1].sum=Number(result[i-1].price)*Number(result[i-1].quantity);\n    }\n\n    const table = document.getElementById('table');\n    const minPrice = document.getElementById('minPrice');\n    const maxPrice = document.getElementById('maxPrice');\n\n    for (let i=0;i<result.length;i++) {\n        if ((result[i].price>=setMinValue(minPrice)) && (result[i].price<=setMaxValue(maxPrice))) {\n            let row = table.insertRow();\n            row.insertCell().textContent = result[i].id;\n            row.insertCell().textContent = result[i].name;\n            row.insertCell().textContent = result[i].quantity;\n            row.insertCell().textContent = result[i].price;\n            row.insertCell().textContent = result[i].sum;\n        }\n    }\n    document.body.appendChild(table);\n}\n\nfunction clearTable() {\n    const table = document.getElementById('table');\n    const rows = table.querySelectorAll('tr');\n    for (let i = 1; i < rows.length; i++) {\n        rows[i].remove();\n    }\n}\n\nfunction setMinValue(min) {\n    let minValue;\n\n    if (min.value==\"\" || min.value==0) {\n        minValue = -1;\n    }\n    else {\n        minValue = min.value;\n    }\n\n    return minValue;\n}\n\nfunction setMaxValue(max) {\n    let maxValue;\n\n    if (max.value==\"\" || max.value==0) {\n        maxValue = Number.POSITIVE_INFINITY;\n    }\n    else {\n        maxValue = max.value;\n    }\n\n    return maxValue;\n}\n\nfunction checkDomElements() {\n    if (document.getElementById('minPrice')\n        && document.getElementById('maxPrice')\n        && document.getElementById('table')) {\n        return true;\n    }\n    else\n        return false;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/script_3.js b/js/script_3.js
+--- a/js/script_3.js	(revision 7fb654a4b32ace55adbf00ac51df80ab056444ca)
++++ b/js/script_3.js	(date 1752663668198)
+@@ -8,7 +8,6 @@
+ 
+     let response = await fetch("https://exercise.develop.maximaster.ru/service/products/");
+     let result = (await response.json());
+-
+     if (!(response.ok)) {
+         alert("Ошибка HTTP: " + response.status);
+         return false;
+Index: styles/style_3.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.filter {\n    width: 100px;\n    height: 20px;\n}\n.mainName {\n    font-family: monospace;\n    font-size: 15px;\n    background-color: #C0C0C0;\n}\n.button {\n    width: 307px;\n    height: 30px;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/styles/style_3.css b/styles/style_3.css
+--- a/styles/style_3.css	(revision 7fb654a4b32ace55adbf00ac51df80ab056444ca)
++++ b/styles/style_3.css	(date 1752662234418)
+@@ -2,11 +2,13 @@
+     width: 100px;
+     height: 20px;
+ }
++
+ .mainName {
+     font-family: monospace;
+     font-size: 15px;
+     background-color: #C0C0C0;
+ }
++
+ .button {
+     width: 307px;
+     height: 30px;

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="57a86df8-1f5d-40dc-ad3a-aa7fbfbbc226" name="Changes" comment="task 2&amp;3">
+      <change beforePath="$PROJECT_DIR$/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/task1/index1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script1.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/task1/js/script1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/style1.css" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/task1/styles/style1.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="task3" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2zXl6gjK5Sx85f8ZfXjWgvWyo7R" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
+    "JavaScript Debug.index1.html.executor": "Run",
+    "Node.js.script.js.executor": "Run",
+    "Node.js.script_2.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "practice__overall",
+    "last_opened_file_path": "/home/user/PhpstormProjects/practice/javascript/task2",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/javascript/task2" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/styles" />
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/javascript" />
+      <recent name="$PROJECT_DIR$/task1" />
+      <recent name="$PROJECT_DIR$/styles" />
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PS-243.26574.100" />
+        <option value="bundled-php-predefined-a98d8de5180a-1ec7b7818973-com.jetbrains.php.sharedIndexes-PS-243.26574.100" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57a86df8-1f5d-40dc-ad3a-aa7fbfbbc226" name="Changes" comment="" />
+      <created>1751885127725</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751885127725</updated>
+      <workItem from="1751885131064" duration="8463000" />
+      <workItem from="1751963020986" duration="12002000" />
+      <workItem from="1752050485883" duration="16154000" />
+      <workItem from="1752222232146" duration="14235000" />
+      <workItem from="1752482253659" duration="10059000" />
+      <workItem from="1752656994337" duration="9924000" />
+      <workItem from="1753262700538" duration="2609000" />
+    </task>
+    <task id="LOCAL-00001" summary="git init">
+      <option name="closed" value="true" />
+      <created>1751885535262</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751885535262</updated>
+    </task>
+    <task id="LOCAL-00002" summary="task1_javascript">
+      <option name="closed" value="true" />
+      <created>1751964599511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751964599511</updated>
+    </task>
+    <task id="LOCAL-00003" summary="task1_javascript">
+      <option name="closed" value="true" />
+      <created>1752054505258</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752054505258</updated>
+    </task>
+    <task id="LOCAL-00004" summary="task1_javascript">
+      <option name="closed" value="true" />
+      <created>1752066617964</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752066617964</updated>
+    </task>
+    <task id="LOCAL-00005" summary="task1_javascript">
+      <option name="closed" value="true" />
+      <created>1752225508775</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752225508775</updated>
+    </task>
+    <task id="LOCAL-00006" summary="task1_javascript">
+      <option name="closed" value="true" />
+      <created>1752227282601</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752227282601</updated>
+    </task>
+    <task id="LOCAL-00007" summary="task1_javascript">
+      <option name="closed" value="true" />
+      <created>1752228421157</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752228421157</updated>
+    </task>
+    <task id="LOCAL-00008" summary="task1_javascript">
+      <option name="closed" value="true" />
+      <created>1752228962421</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752228962421</updated>
+    </task>
+    <task id="LOCAL-00009" summary="task4_javascript">
+      <option name="closed" value="true" />
+      <created>1752482671359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752482671359</updated>
+    </task>
+    <task id="LOCAL-00010" summary="init task 4">
+      <option name="closed" value="true" />
+      <created>1752482972492</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752482972492</updated>
+    </task>
+    <task id="LOCAL-00011" summary="task 4">
+      <option name="closed" value="true" />
+      <created>1752486432994</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752486432994</updated>
+    </task>
+    <task id="LOCAL-00012" summary="task 4">
+      <option name="closed" value="true" />
+      <created>1752486511794</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752486511794</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add gitignore">
+      <option name="closed" value="true" />
+      <created>1752486954855</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752486954855</updated>
+    </task>
+    <task id="LOCAL-00014" summary="task 4 загрузка процессора">
+      <option name="closed" value="true" />
+      <created>1752487075081</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752487075081</updated>
+    </task>
+    <task id="LOCAL-00015" summary="task 4 загрузка процессора">
+      <option name="closed" value="true" />
+      <created>1752660126239</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1752660126239</updated>
+    </task>
+    <task id="LOCAL-00016" summary="task 5">
+      <option name="closed" value="true" />
+      <created>1752660140836</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1752660140836</updated>
+    </task>
+    <task id="LOCAL-00017" summary="task 5">
+      <option name="closed" value="true" />
+      <created>1752661815252</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1752661815252</updated>
+    </task>
+    <task id="LOCAL-00018" summary="task 5">
+      <option name="closed" value="true" />
+      <created>1752661847100</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752661847100</updated>
+    </task>
+    <task id="LOCAL-00019" summary="task 2&amp;3">
+      <option name="closed" value="true" />
+      <created>1752665129258</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1752665129258</updated>
+    </task>
+    <task id="LOCAL-00020" summary="task 2&amp;3">
+      <option name="closed" value="true" />
+      <created>1753262741133</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1753262741133</updated>
+    </task>
+    <task id="LOCAL-00021" summary="task 2&amp;3">
+      <option name="closed" value="true" />
+      <created>1753263000092</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1753263000092</updated>
+    </task>
+    <task id="LOCAL-00022" summary="task 2&amp;3">
+      <option name="closed" value="true" />
+      <created>1753263088441</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1753263088441</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="84ae17f1-f24e-4e07-bd52-8efb400b3ceb" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="84ae17f1-f24e-4e07-bd52-8efb400b3ceb">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git init" />
+    <MESSAGE value="task1_javascript" />
+    <MESSAGE value="task4_javascript" />
+    <MESSAGE value="init task 4" />
+    <MESSAGE value="task 4" />
+    <MESSAGE value="add gitignore" />
+    <MESSAGE value="task 4 загрузка процессора" />
+    <MESSAGE value="task 5" />
+    <MESSAGE value="task 2&amp;3" />
+    <option name="LAST_COMMIT_MESSAGE" value="task 2&amp;3" />
+  </component>
+</project>

@@ -1,0 +1,58 @@
+Index: js/script_2.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>function isDigit() {\n    if (!document.getElementById('phoneNumber').value) {\n        return false;\n    }\n    return /^\\d+$/.test(document.getElementById('phoneNumber').value.trim());\n}\nfunction checkValues() {\n    if (!checkDomElements()) {\n        return false;\n    }\n\n    let flag = true;\n\n    let userName = document.getElementById('userName');\n    let phoneNumber = document.getElementById('phoneNumber');\n    let email = document.getElementById('email');\n    let errorUserName = document.getElementById('errorUserName');\n    let errorPhoneNumber = document.getElementById('errorPhoneNumber');\n    let errorEmail = document.getElementById('errorEmail');\n    let errorResult = document.getElementById('errorResult');\n\n    const reg=/^([A-Za-z0-9_\\-\\.])+\\@([A-Za-z0-9_\\-\\.])+\\.([A-Za-z]{2,4})$/;\n\n    clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult);\n\n    if (userName.value.trim() === '') {\n        flag = false;\n        errorUserName.textContent = \"Пожалуйста, введите ФИО\";\n    }\n    if (email.value!=='' && !reg.test(email.value)) {\n        flag = false;\n        errorEmail.textContent = \"Введите корректный e-mail\";\n    }\n    if (!isDigit()) {\n        flag = false;\n        errorPhoneNumber.textContent = \"Номер телефона не может быть пустым или содержать нечисловые значения\";\n    }\n    if (flag===true) {\n        errorResult.textContent = \"Заказ оформлен\";\n    }\n}\n\nymaps.ready(init);\nlet myMap;\n\nfunction init () {\n    myMap = new ymaps.Map(\"map\", {\n        center: [54.193122, 37.617348],\n        zoom: 11\n    }, {\n        balloonMaxWidth: 200,\n        searchControlProvider: 'yandex#search'\n    });\n    myMap.events.add('click', function (e) {\n        if (!myMap.balloon.isOpen()) {\n            var coords = e.get('coords');\n            myMap.balloon.open(coords, {\n                contentHeader:'Место выбрано',\n                contentBody:\n                    '<p>Координаты: ' + [\n                        coords[0].toPrecision(6),\n                        coords[1].toPrecision(6)\n                    ].join(', ') + '</p>',\n            });\n        }\n        else {\n            myMap.balloon.close();\n        }\n    });\n    myMap.events.add('balloonopen', function (e) {\n        myMap.hint.close();\n    });\n}\n\nfunction checkDomElements() {\n    if (document.getElementById('userName')\n        && document.getElementById('phoneNumber')\n        && document.getElementById('email')\n        && document.getElementById('errorUserName')\n        && document.getElementById('errorPhoneNumber')\n        && document.getElementById('errorEmail')\n        && document.getElementById('errorResult')) {\n        return true;\n    }\n    else\n        return false;\n}\nfunction clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult) {\n    errorUserName.textContent = errorPhoneNumber.textContent = errorEmail.textContent = errorResult.textContent = \"\";\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/script_2.js b/js/script_2.js
+--- a/js/script_2.js	(revision 67c379117d2d3febb2311af7c57ee961cdf12a8a)
++++ b/js/script_2.js	(date 1752227138439)
+@@ -1,9 +1,11 @@
+-function isDigit() {
++function isNumber() {
+     if (!document.getElementById('phoneNumber').value) {
+         return false;
+     }
++
+     return /^\d+$/.test(document.getElementById('phoneNumber').value.trim());
+ }
++
+ function checkValues() {
+     if (!checkDomElements()) {
+         return false;
+@@ -31,7 +33,7 @@
+         flag = false;
+         errorEmail.textContent = "Введите корректный e-mail";
+     }
+-    if (!isDigit()) {
++    if (!isNumber()) {
+         flag = false;
+         errorPhoneNumber.textContent = "Номер телефона не может быть пустым или содержать нечисловые значения";
+     }
+@@ -85,6 +87,7 @@
+     else
+         return false;
+ }
++
+ function clearErrorMessages(errorUserName, errorPhoneNumber, errorEmail, errorResult) {
+     errorUserName.textContent = errorPhoneNumber.textContent = errorEmail.textContent = errorResult.textContent = "";
+ }
+\ No newline at end of file
+Index: styles/style_2.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#comment {\n    width: 600px;\n    height: 150px;\n}\n.label {\n    font-size: 25px;\n}\n.input {\n    width: 600px;\n    height: 20px;\n}\n.errorMessage {\n    color: red;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/styles/style_2.css b/styles/style_2.css
+--- a/styles/style_2.css	(revision 67c379117d2d3febb2311af7c57ee961cdf12a8a)
++++ b/styles/style_2.css	(date 1752225732249)
+@@ -11,4 +11,4 @@
+ }
+ .errorMessage {
+     color: red;
+-}
+\ No newline at end of file
++}
