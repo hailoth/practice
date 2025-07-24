@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./styles/style3.css">
+    <script src="./js/script3.js"></script>
+</head>
+<body>
+<p>Цена от: <input type="number" min="0" id="minPrice" class="filter"/> до: <input type="number" min="0" id="maxPrice" class="filter"/></p>
+<input type="button" value="Отфильтровать" onclick="generateTable()" class="button">
+<br><br>
+<form method="get" action="">
+    <table id="table" width="650" border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <th class="mainName">ID</th>
+            <th class="mainName">Название</th>
+            <th class="mainName">Количество</th>
+            <th class="mainName">Цена за единицу</th>
+            <th class="mainName">Сумма</th>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
